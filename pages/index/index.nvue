@@ -1,0 +1,29 @@
+<template>
+	<view :style="[navigationBar]">
+		<my-navigation-bar :title="title" />
+	</view>
+</template>
+
+<script>
+	const app = getApp().globalData
+	import components from '@/mixins/components.js'
+	import MyNavigationBar from '@/components/navigation-bar/navigation-bar.vue'
+	export default {
+		mixins: [components],
+		components: {
+			MyNavigationBar
+		},
+		data() {
+			return {
+				title: 'my-nvue-app'
+			}
+		},
+		onShow() {
+			app.$uni.showToast('你好')
+		}
+	}
+</script>
+
+<style>
+	
+</style>
